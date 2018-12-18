@@ -98,6 +98,18 @@ public class GradTest {
 	}
 	
 	@Test
+	public void metoda_getBrojStanovnika() {
+		int brojStanovnika = (int) TestUtil.getFieldValue(instance, "brojStanovnika");
+
+		assertEquals("Metoda getBrojStanovnika ne vraca vrednost atributa brojStanovnika", brojStanovnika, instance.getBrojStanovnika());
+	}
+	
+	@Test (expected = GradException.class)
+	public void metoda_equals_nijeDobraKlasa() {
+		instance.equals(new Object());
+	}
+	
+	@Test
 	public void metoda_equals_isti() {
 		instance.setNaziv("Kragujevac");
 		
@@ -108,12 +120,12 @@ public class GradTest {
 	}
 	
 	@Test
-	public void metoda_equals_razliciti() {
+	public void metoda_equals_razlicitNazivGrada() {
 		instance.setNaziv("Kragujevac");
 		
 		Grad grad2 = new Grad();
 		grad2.setNaziv("Bor");
 		
-		assertNotEquals("Metoda equals() ne vraca vrednost true za prosledjen grad sa istim nazivom i mestom", grad2, instance);
+		assertNotEquals("Metoda equals() ne vraca vrednost false za prosledjen grad sa razlicitim nazivom.", grad2, instance);
 	}
 }

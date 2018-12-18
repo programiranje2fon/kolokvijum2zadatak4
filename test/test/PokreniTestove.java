@@ -13,6 +13,8 @@ import org.junit.runner.notification.Failure;
 import grad.DemografijaTest;
 import grad.GradTest;
 import grad.KatalogGradovaTest;
+import grad.exception.GradExceptionTest;
+import grad.gui.GradoviGUITest;
 
 /**
  * This class executes all tests and prints out the report.
@@ -21,9 +23,11 @@ import grad.KatalogGradovaTest;
 public class PokreniTestove {
 
 	public static void main(String[] args) {
+		runTestsForClass(GradExceptionTest.class);
 		runTestsForClass(GradTest.class);
 		runTestsForClass(DemografijaTest.class);
 		runTestsForClass(KatalogGradovaTest.class);
+		runTestsForClass(GradoviGUITest.class);
 	}
 
 	/**
