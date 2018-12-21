@@ -26,7 +26,7 @@ Napraviti vizuelnu klasu **KatalogGradovaGUI** u paketu **grad.gui** koja izgled
 - Kada se pritisne dugme "Dodaj", preuzimaju se svi podaci o gradu iz polja za unos i u katalog se dodaje novi grad pozivom metode **dodajGrad**. Ukoliko se dogodi greška prilikom dodavanja grada u katalog, ispisati u JOptionPane dijalogu poruku "Greška prilikom dodavanja grada". U slučaju da je unos uspešan, ispisati u JOptionPane dijalogu poruku "Grad je uspešno dodat".
 - Kada se pritisne dugme "Sačuvaj", svi gradovi u katalogu se upisuju u odgovarajuće kategorije u katalogu pozivom metode **upisiGradoveUKategorije**. Ukoliko je čuvanje uspešno obavljeno, ispisati u JOptionPane dijalogu poruku "Gradovi su sačuvani". U suprotnom, ispisati poruku "Greška prilikom čuvanja gradova".
 
-![Alt text](../images/prozor.jpg?raw=true "Title")
+![Alt text](../images/gradovi.jpg?raw=true "Title")
 
 # Zadatak 2 (ispravka koda)
 
@@ -38,20 +38,20 @@ U produžetku teksta je dat kod klase sa metodom koja kao parametar dobija listu
 
 Dati kod se kompajlira, ali ne radi to šta treba. Napraviti klasu **StringOperacije** u paketu **ispravka_koda**, prekucati u nju kod koji je dat i, uz minimalne izmene ga ispraviti tako da funkcioniše kako treba. Napraviti test klasu i, koristeći njenu **main** metodu, pozvati metodu **izbaciDuplikate()** i proveriti njen rad.
 
-import java.util.List;
-
-public class StringOperacije {
-	public static void izbaciDuplikate(List<String> lista) {
-		boolean imaDuplikata;
-		do {
-			imaDuplikata = false;
-			for (int i = 0; i < lista.size(); i++)
-				if (lista.lastIndexOf(lista.get(i)) != -1) {
-					lista.remove(lista.lastIndexOf(lista.get(i)));
-					imaDuplikata = true;
-					return;
-				}
-		} while (!imaDuplikata);
-		System.out.println(lista);
+	import java.util.List;
+	
+	public class StringOperacije {
+		public static void izbaciDuplikate(List<String> lista) {
+			boolean imaDuplikata;
+			do {
+				imaDuplikata = false;
+				for (int i = 0; i < lista.size(); i++)
+					if (lista.lastIndexOf(lista.get(i)) != -1) {
+						lista.remove(lista.lastIndexOf(lista.get(i)));
+						imaDuplikata = true;
+						return;
+					}
+			} while (!imaDuplikata);
+			System.out.println(lista);
+		}
 	}
-}
