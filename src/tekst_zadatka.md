@@ -1,5 +1,7 @@
 # Zadatak 1
 
+** NAPOMENA: PO ZAVRŠETKU ZADATKA OBAVEZNO TESTIRATI REŠENJE POZIVANJEM AUTOMATIZOVANIH TESTOVA (desnim tasterom na naziv projekta, Run as - Java Application - PokreniTestove)**
+
 Napraviti javnu klasu **GradException** u paketu **grad.exception** koja predstavlja neproveravani izuzetak i ima:
 - Javni konstruktor koji kao parametar prima poruku greške i poziva odgovarajući konstruktor nadklase prosleđujući mu parametar.
 
@@ -25,3 +27,31 @@ Napraviti vizuelnu klasu **KatalogGradovaGUI** u paketu **grad.gui** koja izgled
 - Kada se pritisne dugme "Sačuvaj", svi gradovi u katalogu se upisuju u odgovarajuće kategorije u katalogu pozivom metode **upisiGradoveUKategorije**. Ukoliko je čuvanje uspešno obavljeno, ispisati u JOptionPane dijalogu poruku "Gradovi su sačuvani". U suprotnom, ispisati poruku "Greška prilikom čuvanja gradova".
 
 ![Alt text](../images/prozor.jpg?raw=true "Title")
+
+# Zadatak 2 (ispravka koda)
+
+** NAPOMENA: PO ZAVRŠETKU ZADATKA OBAVEZNO TESTIRATI REŠENJE POZIVANJEM AUTOMATIZOVANIH TESTOVA (desnim tasterom na naziv projekta, Run as - Java Application - PokreniTestove)**
+
+U produžetku teksta je dat kod klase sa metodom koja kao parametar dobija listu String vrednosti i iz te liste izbacuje duplikate tj. Stringove koji se pojavljuju dva ili više puta i to tako da na kraju ostane samo jedno pojavljivanje datog String-a. Metoda na kraju ispisuje sadržaj liste (bez duplikata) na ekranu. Na primer, ako metoda kao ulaz dobije listu sa pet String vrednosti :"Pera", "Mika", "Zika", "Pera", "Pera", konačan izlaz na ekranu treba da izgleda ovako:
+
+	[Pera, Mika, Zika]
+
+Dati kod se kompajlira, ali ne radi to šta treba. Napraviti klasu **StringOperacije** u paketu **ispravka_koda**, prekucati u nju kod koji je dat i, uz minimalne izmene ga ispraviti tako da funkcioniše kako treba. Napraviti test klasu i, koristeći njenu **main** metodu, pozvati metodu **izbaciDuplikate()** i proveriti njen rad.
+
+import java.util.List;
+
+public class StringOperacije {
+	public static void izbaciDuplikate(List<String> lista) {
+		boolean imaDuplikata;
+		do {
+			imaDuplikata = false;
+			for (int i = 0; i < lista.size(); i++)
+				if (lista.lastIndexOf(lista.get(i)) != -1) {
+					lista.remove(lista.lastIndexOf(lista.get(i)));
+					imaDuplikata = true;
+					return;
+				}
+		} while (!imaDuplikata);
+		System.out.println(lista);
+	}
+}
