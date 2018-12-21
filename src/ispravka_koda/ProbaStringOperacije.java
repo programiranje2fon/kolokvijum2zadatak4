@@ -3,7 +3,7 @@ package ispravka_koda;
 import java.util.LinkedList;
 import java.util.List;
 
-public class TestStringOperacije {
+public class ProbaStringOperacije {
 
 	public static void main(String[] args) {
 		List<String> lista = new LinkedList<>();
