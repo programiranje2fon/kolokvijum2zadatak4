@@ -15,6 +15,7 @@ import grad.GradTest;
 import grad.KatalogGradovaTest;
 import grad.exception.GradExceptionTest;
 import grad.gui.GradoviGUITest;
+import ispravka_koda.StringOperacijeTest;
 
 /**
  * This class executes all tests and prints out the report.
@@ -28,6 +29,7 @@ public class PokreniTestove {
 		runTestsForClass(DemografijaTest.class);
 		runTestsForClass(KatalogGradovaTest.class);
 		runTestsForClass(GradoviGUITest.class);
+		runTestsForClass(StringOperacijeTest.class);
 	}
 
 	/**
