@@ -38,7 +38,7 @@ public class KatalogGradova implements Demografija {
 	}
 
 	@Override
-	public void upisiGradoveUKategorije() throws Exception {
+	public void upisiGradoveUKategorije() {
 		try (ObjectOutputStream maliGradoviOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("mali_gradovi.out")));
 				ObjectOutputStream srednjiGradoviOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("srednji_gradovi.out")));
 				ObjectOutputStream velikiGradoviOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("veliki_gradovi.out")));){
@@ -53,7 +53,7 @@ public class KatalogGradova implements Demografija {
 				}
 			}
 		} catch (Exception ex) {
-			throw ex;
+			throw new GradException("Greska prilikom upisivanja u fajlove.");
 		}
 	}
 }

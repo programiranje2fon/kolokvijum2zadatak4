@@ -14,6 +14,7 @@ import javax.swing.border.EmptyBorder;
 
 import grad.Grad;
 import grad.KatalogGradova;
+import grad.exception.GradException;
 
 public class GradoviGUI extends JFrame {
 
@@ -76,7 +77,7 @@ public class GradoviGUI extends JFrame {
 					katalog.dodajGrad(noviGrad);
 
 					JOptionPane.showMessageDialog(null, "Grad je uspešno dodat", "Uspesno", JOptionPane.INFORMATION_MESSAGE);
-				} catch (Exception ex) {
+				} catch (GradException ex) {
 					JOptionPane.showMessageDialog(null, "Greška prilikom dodavanja grada", "Greska", JOptionPane.ERROR_MESSAGE);
 				}
 			}
@@ -91,7 +92,7 @@ public class GradoviGUI extends JFrame {
 					katalog.upisiGradoveUKategorije();
 					
 					JOptionPane.showMessageDialog(null, "Gradovi su sačuvani", "Uspesno", JOptionPane.INFORMATION_MESSAGE);
-				} catch (Exception e1) {
+				} catch (GradException ex) {
 					JOptionPane.showMessageDialog(null, "Greška prilikom čuvanja gradova", "Greska", JOptionPane.ERROR_MESSAGE);
 				}
 			}
