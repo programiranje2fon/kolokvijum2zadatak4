@@ -65,6 +65,7 @@ public interface Demografija {
 
 }
 
+
 package grad;
 
 import java.io.BufferedOutputStream;
@@ -105,7 +106,7 @@ public class KatalogGradova implements Demografija {
 	}
 
 	@Override
-	public void upisiGradoveUKategorije() throws Exception {
+	public void upisiGradoveUKategorije() {
 		try (ObjectOutputStream maliGradoviOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("mali_gradovi.out")));
 				ObjectOutputStream srednjiGradoviOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("srednji_gradovi.out")));
 				ObjectOutputStream velikiGradoviOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("veliki_gradovi.out")));){
@@ -120,10 +121,11 @@ public class KatalogGradova implements Demografija {
 				}
 			}
 		} catch (Exception ex) {
-			throw ex;
+			throw new GradException("Greska prilikom upisivanja u fajlove.");
 		}
 	}
 }
+
 
 package grad.gui;
 
@@ -141,6 +143,7 @@ import javax.swing.border.EmptyBorder;
 
 import grad.Grad;
 import grad.KatalogGradova;
+import grad.exception.GradException;
 
 public class GradoviGUI extends JFrame {
 
@@ -203,7 +206,7 @@ public class GradoviGUI extends JFrame {
 					katalog.dodajGrad(noviGrad);
 
 					JOptionPane.showMessageDialog(null, "Grad je uspešno dodat", "Uspesno", JOptionPane.INFORMATION_MESSAGE);
-				} catch (Exception ex) {
+				} catch (GradException ex) {
 					JOptionPane.showMessageDialog(null, "Greška prilikom dodavanja grada", "Greska", JOptionPane.ERROR_MESSAGE);
 				}
 			}
@@ -218,7 +221,7 @@ public class GradoviGUI extends JFrame {
 					katalog.upisiGradoveUKategorije();
 					
 					JOptionPane.showMessageDialog(null, "Gradovi su sačuvani", "Uspesno", JOptionPane.INFORMATION_MESSAGE);
-				} catch (Exception e1) {
+				} catch (GradException ex) {
 					JOptionPane.showMessageDialog(null, "Greška prilikom čuvanja gradova", "Greska", JOptionPane.ERROR_MESSAGE);
 				}
 			}
