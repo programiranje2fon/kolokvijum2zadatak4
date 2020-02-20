@@ -40,7 +40,7 @@ public class StringOperacijeTest {
 		lista.add("Pera");
 
 		String ocekivaniIspis = 
-				"[Pera, Mika, Zika]\n";
+				"[Pera, Mika, Zika]"+System.lineSeparator();
 		
 		StringOperacije.izbaciDuplikate(lista);
 		
