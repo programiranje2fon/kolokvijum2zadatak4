@@ -1,6 +1,6 @@
 # Zadatak 1
 
-** NAPOMENA: PO ZAVRŠETKU ZADATKA OBAVEZNO TESTIRATI REŠENJE POZIVANJEM AUTOMATIZOVANIH TESTOVA (desnim tasterom na naziv projekta, Run as - Java Application - PokreniTestove)**
+**NAPOMENA: PO ZAVRŠETKU ZADATKA OBAVEZNO TESTIRATI REŠENJE POZIVANJEM AUTOMATIZOVANIH TESTOVA (desnim tasterom na naziv projekta, Run as - Java Application - PokreniTestove)**
 
 Napraviti javnu klasu **GradException** u paketu **grad.exception** koja predstavlja neproveravani izuzetak i ima:
 - Javni konstruktor koji kao parametar prima poruku greške i poziva odgovarajući konstruktor nadklase prosleđujući mu parametar.
@@ -26,7 +26,7 @@ Napraviti vizuelnu klasu **GradoviGUI** u paketu **grad.gui** koja izgleda kao n
 - Kada se pritisne dugme "Dodaj", preuzimaju se svi podaci o gradu iz polja za unos i u katalog se dodaje novi grad pozivom metode **dodajGrad**. Ukoliko se dogodi greška prilikom dodavanja grada u katalog, ispisati u JOptionPane dijalogu poruku "Greška prilikom dodavanja grada". U slučaju da je unos uspešan, ispisati u JOptionPane dijalogu poruku "Grad je uspešno dodat".
 - Kada se pritisne dugme "Sačuvaj", svi gradovi u katalogu se upisuju u odgovarajuće kategorije u katalogu pozivom metode **upisiGradoveUKategorije**. Ukoliko je čuvanje uspešno obavljeno, ispisati u JOptionPane dijalogu poruku "Gradovi su sačuvani". U suprotnom, ispisati poruku "Greška prilikom čuvanja gradova".
 
-![Alt text](../images/gradovi.jpg?raw=true "Title")
+![Slika1](../images/gradovi.jpg)
 
 # Zadatak 2 (ispravka koda)
 
